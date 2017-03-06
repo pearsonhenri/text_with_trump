@@ -3,20 +3,20 @@ import csv
 import os
 import re
 
-corpus_dir = "/Users/phenri/Documents/pearsonal/text_with_trump/corpora/speeches/raw/Clinton-Trump Corpus/"
-csv_dir = "/Users/phenri/Documents/pearsonal/text_with_trump/corpora/speeches/wordcounts/"
+corpus_dir = "/Users/phenri/personal-github/text_with_trump/corpora/speeches/raw/Clinton-Trump Corpus/"
+csv_dir = "/Users/phenri/personal-github/text_with_trump/corpora/speeches/wordcounts/"
 
 
 def clean_speech_file_text(person, filename):
     with open(os.path.join(corpus_dir, person, filename), 'r') as speech_file:
         speech_lines = speech_file.readlines()
+    matcher = re.compile("[<(][^)>]*[)>]|[(\.)+\",?!:;\d]")
     cleaned_speech_text = ""
     for line in speech_lines:
         if not (line.startswith("<title=") or line.startswith("<date")
-                or not (line.startswith("<TRUMP:>") or line.startswith("<CLINTON:>"))):
-            cleaned_speech_text += re.sub("[<(][^)>]*[)>]", "", line)
+                or not line.startswith("<" + person.upper() + ":>")):
+            cleaned_speech_text += re.sub(matcher, "", line).rstrip()
     return cleaned_speech_text
-
 
 for person in os.listdir(corpus_dir):
     speech_text = ""
