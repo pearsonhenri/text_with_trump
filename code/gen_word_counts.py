@@ -25,8 +25,6 @@ for person in os.listdir(corpus_dir):
             speech_text += " " + clean_speech_file_text(person, raw_speech)
     speech_words = speech_text.lower().split(" ")
     word_counts = Counter(speech_words)
-    print person
-    print word_counts.most_common(100)
     csv_name = person.lower() + ".csv"
     writefile = open(os.path.join(csv_dir, csv_name), 'wb')
     writer = csv.writer(writefile)
