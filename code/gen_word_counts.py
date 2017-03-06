@@ -3,7 +3,7 @@ import csv
 import os
 import re
 
-corpus_dir = "/Users/phenri/personal-github/text_with_trump/corpora/speeches/raw/Clinton-Trump Corpus/"
+corpus_dir = "/Users/phenri/personal-github/text_with_trump/corpora/speeches/raw/Corpus of Presidential Speeches/"
 csv_dir = "/Users/phenri/personal-github/text_with_trump/corpora/speeches/wordcounts/"
 
 
