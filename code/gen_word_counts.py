@@ -2,6 +2,7 @@ from collections import Counter
 import csv
 import os
 import re
+import tempfile
 
 corpus_dir = "/Users/phenri/personal-github/text_with_trump/corpora/speeches/raw/Corpus of Presidential Speeches/"
 csv_dir = "/Users/phenri/personal-github/text_with_trump/corpora/speeches/wordcounts/"
@@ -32,3 +33,15 @@ for person in os.listdir(corpus_dir):
     for key, count in word_counts.iteritems():
         writer.writerow([key, count])
     writefile.close()
+
+# remove first line, which counts nulls
+for csv in os.listdir(csv_dir):
+    tmp = tempfile.NamedTemporaryFile(mode='r+')
+    with open(os.path.join(csv_dir, csv), 'r') as i:
+        i.next()
+        for line in i:
+           tmp.write(line.rstrip()+"\n")
+    tmp.seek(0)
+    with open(os.path.join(csv_dir, csv), 'w') as o:
+        for line in tmp:
+            o.write(line)
