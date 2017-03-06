@@ -13,9 +13,8 @@ def clean_speech_file_text(person, filename):
     matcher = re.compile("[<(][^)>]*[)>]|[(\.)+\",?!:;\d]")
     cleaned_speech_text = ""
     for line in speech_lines:
-        if not (line.startswith("<title=") or line.startswith("<date")
-                or not line.startswith("<" + person.upper() + ":>")):
-            cleaned_speech_text += re.sub(matcher, "", line).rstrip()
+        if not (line.startswith("<title=") or line.startswith("<date")):
+            cleaned_speech_text += re.sub(matcher, "", line).rstrip() + " "
     return cleaned_speech_text
 
 for person in os.listdir(corpus_dir):
