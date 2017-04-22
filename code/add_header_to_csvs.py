@@ -1,6 +1,6 @@
 import os
 
-csv_dir = '/Users/phenri/personal-github/text_with_trump/data/wordcounts/'
+csv_dir = os.path.join(os.getcwd(), "data/wordcounts")
 
 header = 'word,count,relative_use'
 

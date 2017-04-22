@@ -2,7 +2,7 @@ import csv
 import fileinput
 import os
 
-csv_dir = "/Users/phenri/personal-github/text_with_trump/data/wordcounts/"
+csv_dir = os.path.join(os.getcwd(), "data/wordcounts")
 
 for wordcounts in os.listdir(csv_dir):
     with open(os.path.join(csv_dir, wordcounts), 'r') as f:

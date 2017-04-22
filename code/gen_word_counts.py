@@ -4,8 +4,8 @@ import os
 import re
 import tempfile
 
-corpus_dir = "/Users/phenri/personal-github/text_with_trump/corpora/speeches/raw/Corpus of Presidential Speeches/"
-csv_dir = "/Users/phenri/personal-github/text_with_trump/corpora/speeches/wordcounts/"
+corpus_dir = os.path.join(os.getcwd(), "data/speeches/raw/Corpus of Presidential Speeches/")
+csv_dir = os.path.join(os.getcwd(), "data/speeches/wordcounts")
 
 
 def clean_speech_file_text(person, filename):
@@ -17,6 +17,7 @@ def clean_speech_file_text(person, filename):
         if not (line.startswith("<title=") or line.startswith("<date")):
             cleaned_speech_text += re.sub(matcher, "", line).rstrip() + " "
     return cleaned_speech_text
+
 
 for person in os.listdir(corpus_dir):
     speech_text = ""
