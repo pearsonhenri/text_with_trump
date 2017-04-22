@@ -19,6 +19,21 @@ def clean_speech_file_text(person, filename):
     return cleaned_speech_text
 
 
+def add_frequency_to_csvs():
+    for wordcounts in os.listdir(csv_dir):
+        with open(os.path.join(csv_dir, wordcounts), 'r') as f:
+            total_words = 0
+            total_individual_words = 0
+            rows = list(csv.reader(f))
+            for row in rows:
+                total_words += int(row[1])
+                total_individual_words += 1
+        new_file = fileinput.input(os.path.join(csv_dir, wordcounts), inplace=True)
+        for line in new_file:
+            word_count = line.split(",")[1]
+            print line.rstrip() + ',' + str(float(word_count)/total_words)
+        new_file.close()
+
 for person in os.listdir(corpus_dir):
     speech_text = ""
     for raw_speech in os.listdir(os.path.join(corpus_dir, person)):
@@ -44,3 +59,5 @@ for csv in os.listdir(csv_dir):
     with open(os.path.join(csv_dir, csv), 'w') as o:
         for line in tmp:
             o.write(line)
+
+add_frequency_to_csvs()
