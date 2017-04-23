@@ -2,7 +2,7 @@
 Playground for textual data exploration
 
 ## What's in this repository
-* A number of [transcripts](https://github.com/pearsonhenri/text_with_trump/tree/master/data/speeches/raw) from presidential speeches, as well as Hillary Clinton and Donald Trump's 2016 campaign speeches [(source)](http://www.thegrammarlab.com/?p=577)
+* A number of [transcripts](https://github.com/pearsonhenri/text_with_trump/tree/master/data/speeches/raw) from presidential speeches, as well as Hillary Clinton and Donald Trump's 2016 campaign speeches [(source)](http://www.thegrammarlab.com/?nor-portfolio=corpus-of-presidential-speeches-cops-and-a-clintontrump-corpus)
 * [CSV files](https://github.com/pearsonhenri/text_with_trump/tree/master/data/wordcounts) for each politician containing the word count and frequency for every word used
 * A [script](https://github.com/pearsonhenri/text_with_trump/blob/master/code/get_frequency_diff.py) that calculates the difference in word usage frequency for any two politicians with output that looks like this:
 
@@ -33,3 +33,5 @@ judgment     wordcount: 71    frequency factor: 18.4515334179
 total     wordcount: 142    frequency factor: 18.4515334178
 justices     wordcount: 66    frequency factor: 17.1521296561
 ```
+
+* A [script] that determines the most frequent users of a word

@@ -1,1 +1,1 @@
-[source](http://www.thegrammarlab.com/?p=577)
+[source](http://www.thegrammarlab.com/?nor-portfolio=corpus-of-presidential-speeches-cops-and-a-clintontrump-corpus)

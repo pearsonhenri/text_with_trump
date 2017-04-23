@@ -5,7 +5,7 @@ import re
 import tempfile
 
 corpus_dir = os.path.join(os.getcwd(), "data/speeches/raw/Corpus of Presidential Speeches/")
-csv_dir = os.path.join(os.getcwd(), "data/speeches/wordcounts")
+csv_dir = os.path.join(os.getcwd(), "data/wordcounts")
 
 
 def clean_speech_file_text(person, filename):
