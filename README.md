@@ -34,4 +34,4 @@ total     wordcount: 142    frequency factor: 18.4515334178
 justices     wordcount: 66    frequency factor: 17.1521296561
 ```
 
-* A [script] that determines the most frequent users of a word
+* A [script](https://github.com/pearsonhenri/text_with_trump/blob/master/code/top_word_users.py) that determines the most frequent users of a word
